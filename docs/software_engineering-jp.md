@@ -11,9 +11,11 @@
     このセクションは時代遅れです。ここにはたくさんの重要な疑問やスマートコントラクトのアップグレード可能性に関するリスクが存在します。最新の情報を貴方自身で調査してください。[related issue](https://github.com/ConsenSys/smart-contract-best-practices/issues/164)にて、議論を歓迎しています。
 
 
-Code will need to be changed if errors are discovered or if improvements need to be made. It is no good to discover a bug, but have no way to deal with it.
+コードというものは、エラーが発見されたり、改善の必要ができたときなど、変更がつきものです。バグを見つけたときに、対処する方法がないのはよくないことです。
 
-Designing an effective upgrade system for smart contracts is an area of active research, and we won't be able to cover all of the complications in this document. However, there are two basic approaches that are most commonly used. The simpler of the two is to have a registry contract that holds the address of the latest version of the contract. A more seamless approach for contract users is to have a contract that forwards calls and data onto the latest version of the contract.
+スマートコントラクトのための効果的なアップグレードシステムのデザインは、アクティブな研究領域であり、このドキュメントにおいてもすべての問題をカバーできてはいません。しかしながら、ここでは2つのよく使われている基本的なアプローチを紹介します。よりシームレス
+
+ However, there are two basic approaches that are most commonly used. The simpler of the two is to have a registry contract that holds the address of the latest version of the contract. A more seamless approach for contract users is to have a contract that forwards calls and data onto the latest version of the contract.
 
 Whatever the technique, it's important to have modularization and good separation between components, so that code changes do not break functionality, orphan data, or require substantial costs to port. In particular, it is usually beneficial to separate complex logic from your data storage, so that you do not have to recreate all of the data in order to change the functionality.
 
