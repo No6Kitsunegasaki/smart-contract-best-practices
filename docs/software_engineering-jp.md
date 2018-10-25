@@ -1,13 +1,13 @@
-私達は[General Philosophy](/general_philosophy/)セクションで議論していますが、それは貴方達を既知の攻撃がら守るためには不十分です。ブロックチーン上での失敗のコストはとても高いので、貴方達はそのリスクを理解して貴方達のソフトウェアを書いていくということを受け入れなくてはいけません。
+私達は[General Philosophy](/general_philosophy/)セクションで議論していますが、それは貴方達を既知の攻撃から守るためには不十分です。ブロックチーン上での失敗のコストはとても高いので、貴方達はそのリスクを理解して貴方達のソフトウェアを書いていくということを受け入れなくてはいけません。
 
 そのアプローチとして私達は"失敗の準備"を提唱します。貴方達のコードが安全かどうかをあらかじめ知ることは不可能です。しかしながら、コントラクトを正常に失敗してダメージを最小限にするよう設計することはできます。このセクションでは、貴方達が失敗の準備ができる助けとなるようなテクニックを紹介します。
 
 Note: There's always a risk when you add a new component to your system. A badly designed fail-safe could itself become a vulnerability - as can the interaction between a number of well designed fail-safes. Be thoughtful about each technique you use in your contracts, and consider carefully how they work together to create a robust system.
 
-### Upgrading Broken Contracts
+### 壊れたコントラクトをアップグレードする
 
-!!! warning
-    This section is outdated. There are many important questions, and risks related to smart contract upgradeability. Do your research into the state of the art. We welcome discussion on the [related issue](https://github.com/ConsenSys/smart-contract-best-practices/issues/164). 
+!!! 注意
+    このセクションは時代遅れです。ここにはたくさんの重要な疑問やスマートコントラクトのアップグレード可能性に関するリスクが存在します。最新の情報を貴方自身で調査してください。[related issue](https://github.com/ConsenSys/smart-contract-best-practices/issues/164)にて、議論を歓迎しています。
 
 
 Code will need to be changed if errors are discovered or if improvements need to be made. It is no good to discover a bug, but have no way to deal with it.
