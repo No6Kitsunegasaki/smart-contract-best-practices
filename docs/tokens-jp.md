@@ -19,18 +19,19 @@ EIP-20トークンの`approve()`関数は許可を受けた消費者(spender)が
 詳細は[EIP](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#approve)と、[this document](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit)でご覧になれます。
 
 
-## Prevent transferring tokens to the 0x0 address
+## 0x0アドレスへのトークン転送をしないようにすること
 
-At the time of writing, the "zero" address ([0x0000000000000000000000000000000000000000](https://etherscan.io/address/0x0000000000000000000000000000000000000000)) holds tokens with a value of more than 80$ million.
+これを書いている時点で、"ゼロ"アドレス([0x0000000000000000000000000000000000000000](https://etherscan.io/address/0x0000000000000000000000000000000000000000))は、8000万ドル以上のトークンを保有しています。
 
 
-## Prevent transferring tokens to the contract address
+## コントラクトアドレスへのトークン転送をしないようにすること
 
-Consider also preventing the transfer of tokens to the same address of the smart contract. 
+同様に、コントラクトアドレスへのトークン転送にも注意してください。
 
-An example of the potential for loss by leaving this open is the [EOS token smart contract](https://etherscan.io/address/0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0) where more than 90,000 tokens are stuck at the contract address. 
+注意しなかった場合のトークン喪失の可能性の例として、9万トークン以上がコントラクトアドレスに死蔵されているのを[EOS token smart contract](https://etherscan.io/address/0x86fa049857e0209aa7d9e616f7eb3b3b78ecfdb0)で確認できます。
 
-### Example
+
+### 例
 
 An example of implementing both the above recommendations would be to create the following modifier; validating that the "to" address is neither 0x0 nor the smart contract's own address:
 
