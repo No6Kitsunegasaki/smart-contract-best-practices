@@ -1,20 +1,22 @@
 
-# Token Implementation Best Practice
+# トークン実装のベストプラクティス
 
-Implementing Tokens should comply with other best practices, but also have some unique considerations.
+トークンの実装は他のベストプラクティスにもちろん準ずるべきですが、トークンならではの注意事項もあります。
 
-## Comply with the latest standard
+## 最新の標準に準ずる
 
-Generally speaking, smart contracts of tokens should follow an accepted and stable standard. 
+一般的に、トークンのスマートコントラクトは採択されて安定した標準に追従すべきと言われています。
 
-Examples of currently accepted standards are:
+現在採択された標準の例は以下の通りです。
 
 * [EIP20](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
 * [EIP721](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md) (non-fungible token)
 
-## Be aware of front running attacks on EIP-20
+## 今現在存在しているEIP-20の弱点
 
-The EIP-20 token's `approve()` function creates the potential for an approved spender to spend more than the intended amount. A [front running attack](./known_attacks/#transaction-ordering-dependence-tod-front-running) can be used, enabling an approved spender to call `transferFrom()` both before and after the call to `approve()` is processed. More details are available on the [EIP](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#approve), and in [this document](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit).
+EIP-20トークンの`approve()`関数は許可を受けた消費者(spender)が意図する量以上のトークンを引き出せる可能性があります。
+[front running attack](./known_attacks/#transaction-ordering-dependence-tod-front-running)を利用されると、消費者(spender)は`approve()`が呼ばれる前と後の両方で`transferFrom()`を呼ぶことが可能になります。
+詳細は[EIP](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#approve)と、[this document](https://docs.google.com/document/d/1YLPtQxZu1UAvO9cZ1O2RPXBbT0mooh4DYKjA_jp-RLM/edit)でご覧になれます。
 
 
 ## Prevent transferring tokens to the 0x0 address
