@@ -33,7 +33,7 @@ EIP-20トークンの`approve()`関数は許可を受けた消費者(spender)が
 
 ### 例
 
-An example of implementing both the above recommendations would be to create the following modifier; validating that the "to" address is neither 0x0 nor the smart contract's own address:
+このようなmodifierを作った方がいいというお勧めの実装例です。"to"アドレスが0x0もスマートコントラクト自身のアドレスでもないことをチェックしています。
 
 ```sol
     modifier validDestination( address to ) {
@@ -43,7 +43,7 @@ An example of implementing both the above recommendations would be to create the
     }
 ```
 
-The modifier should then be applied to the "transfer" and "transferFrom" methods:
+このModifierを"transfer"と"transferFrom"メソッドに適用すべきです。
 
 ```sol 
     function transfer(address _to, uint _value)
