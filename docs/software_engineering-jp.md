@@ -2,7 +2,8 @@
 
 そのアプローチとして私達は"失敗の準備"を提唱します。貴方達のコードが安全かどうかをあらかじめ知ることは不可能です。しかしながら、コントラクトを正常に失敗してダメージを最小限にするよう設計することはできます。このセクションでは、貴方達が失敗の準備ができる助けとなるようなテクニックを紹介します。
 
-Note: There's always a risk when you add a new component to your system. A badly designed fail-safe could itself become a vulnerability - as can the interaction between a number of well designed fail-safes. Be thoughtful about each technique you use in your contracts, and consider carefully how they work together to create a robust system.
+注記: 貴方達のシステムに新しいコンポーネントを加えるときには常にリスクが存在します。ひとつの悪いデザインのfail-safeは、いかに多くの良いデザインのfail-safeと一緒であっても脆弱性になってしまうでしょう。貴方方達が自分のコントラクトにテクニックを使うときは、常によく考えるべきであり、どうしたら堅牢なシステムの一部となるように作れるかを注意深く考えましょう。
+
 
 ### 壊れたコントラクトをアップグレードする
 
