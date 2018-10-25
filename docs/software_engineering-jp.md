@@ -1,6 +1,6 @@
-As we discussed in the [General Philosophy](/general_philosophy/) section, it is not enough to protect yourself against the known attacks. Since the cost of failure on a blockchain can be very high, you must also adapt the way you write software, to account for that risk.
+私達は[General Philosophy](/general_philosophy/)セクションで議論していますが、それは貴方達を既知の攻撃がら守るためには不十分です。ブロックチーン上での失敗のコストはとても高いので、貴方達はそのリスクを理解して貴方達のソフトウェアを書いていくということを受け入れなくてはいけません。
 
-The approach we advocate is to "prepare for failure". It is impossible to know in advance whether your code is secure. However, you can architect your contracts in a way that allows them to fail gracefully, and with minimal damage. This section presents a variety of techniques that will help you prepare for failure.
+そのアプローチとして私達は"失敗の準備"を提唱します。貴方達のコードが安全かどうかをあらかじめ知ることは不可能です。しかしながら、コントラクトを正常に失敗してダメージを最小限にするよう設計することはできます。このセクションでは、貴方達が失敗の準備ができる助けとなるようなテクニックを紹介します。
 
 Note: There's always a risk when you add a new component to your system. A badly designed fail-safe could itself become a vulnerability - as can the interaction between a number of well designed fail-safes. Be thoughtful about each technique you use in your contracts, and consider carefully how they work together to create a robust system.
 
